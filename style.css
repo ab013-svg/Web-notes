@@ -1,0 +1,214 @@
+body{
+
+background:#1b1b1b;
+
+color:rgb(240, 237, 237);
+
+font-family:Arial;
+
+text-align:center;
+
+}
+
+.noteDateTime {
+    background: #3a3a3a;
+    padding: 5px 8px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+h1 {
+    background: #3a3a3a;
+    padding: 8px 15px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+#addBtn {
+    background-color: #3a3a3a;
+    color: white;
+    font-weight: bolder;
+}
+
+#addBtn:hover {
+    background-color: #00bfff;
+    color: white;
+}
+
+button{
+
+    padding:5px 10px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:8px;
+
+}
+
+button:hover{
+    background-color:#00bfff;
+
+    color:white;
+}
+
+#notesContainer{
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+#searchInput {
+    width: 400px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.moveBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #3a3a3a;
+    color: white;
+}
+
+.moveBtn:hover {
+    background-color: #00bfff;
+    color: white;
+}
+
+.topBar {
+    display:flex;
+    max-width: 80%;
+    margin: 20px auto;
+    display: block;
+}
+.favicon {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.note{
+    background: #181818;
+    padding: 30px;
+    margin: 10px auto;
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: left;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.deleteBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #3a3a3a;
+}
+
+.deleteBtn:hover {
+    background-color: #ff005d;
+    color: white;
+}
+
+.saveBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #3a3a3a;
+}
+
+.saveBtn:hover {
+    background-color: #59d28d;
+    color: white;
+}
+
+
+.editBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #3a3a3a;
+}
+
+.editBtn:hover {
+    background-color: #00bfff;
+    color: white;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.noteText {
+    margin-bottom: 25px;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 8px;
+}
+
+a {
+    text-decoration: none;
+    color:#00bfff;
+}
+
+.dateTimeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dateTimeContainer label {
+    background: #3a3a3a;
+    padding: 3px 6px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.textContainer h3 {
+    margin: 0;
+    background: #3a3a3a;
+    padding: 3px 6px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+input {
+    background-color: #1b1b1b;
+    color: white;
+    border: 1px solid #3a3a3a;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.noteDateTime {
+    color: #aaa;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.editSaveButton {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #3a3a3a;
+    color: white;
+}
+
+.editSaveButton:hover {
+    background-color: #59d28d;
+    color: white;
+}
