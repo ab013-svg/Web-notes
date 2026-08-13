@@ -1,13 +1,8 @@
-body{
-
-background:#1b1b1b;
-
-color:rgb(240, 237, 237);
-
-font-family:Arial;
-
-text-align:center;
-
+body {
+    background: #1b1b1b;
+    color: rgb(240, 237, 237);
+    font-family: Arial;
+    text-align: center;
 }
 
 .noteDateTime {
@@ -17,198 +12,1120 @@ text-align:center;
     width: fit-content;
 }
 
-h1 {
-    background: #3a3a3a;
-    padding: 8px 15px;
-    border-radius: 10px;
+/* =========================
+   NOTE FOLDER DISPLAY
+========================= */
+
+.noteFolder {
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
     width: fit-content;
-    margin: 20px auto;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    box-sizing: border-box;
 }
 
-#addBtn {
-    background-color: #3a3a3a;
+/* =========================
+   MAIN TITLE
+========================= */
+
+h1 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 25px 0 15px;
+    color: #f0eded;
+
+    display: inline-block;
+    padding: 8px 18px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+h1::after {
+    content: "";
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    background: #3a3a3a;
+
+    margin: 8px auto 0;
+
+    border-radius: 2px;
+}
+
+
+/* =========================
+   GENERAL BUTTON STYLE
+========================= */
+
+button {
+    padding: 5px 10px;
+
+    font-size: 18px;
+    font-family: Arial;
+
+    cursor: pointer;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+
+    background: #181818;
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+button:hover {
+    background: #00bfff;
+    color: white;
+
+    border-color: #00bfff;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   ADD BUTTONS
+========================= */
+
+#addBtn,
+#addFolderBtn {
+    background: #181818;
     color: white;
     font-weight: bolder;
 }
 
 #addBtn:hover {
-    background-color: #00bfff;
+    background: #00bfff;
     color: white;
 }
 
-button{
-
-    padding:5px 10px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    border:none;
-
-    border-radius:8px;
-
-}
-
-button:hover{
-    background-color:#00bfff;
-
-    color:white;
-}
-
-#notesContainer{
-    width: 100%;
-    max-width: 800px;
-    margin: 30px auto;
-}
-
-#searchInput {
-    width: 400px;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.moveBtn {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #3a3a3a;
+#addFolderBtn:hover {
+    background: #ffcc00;
     color: white;
 }
 
-.moveBtn:hover {
-    background-color: #00bfff;
-    color: white;
-}
 
-.topBar {
-    display:flex;
-    max-width: 80%;
-    margin: 20px auto;
-    display: block;
-}
-.favicon {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    vertical-align: middle;
-    margin-right: 5px;
-}
+/* =========================
+   MAIN LAYOUT
+========================= */
 
-.note{
-    background: #181818;
-    padding: 30px;
-    margin: 10px auto;
-    border-radius: 10px;
-    max-width: 700px;
-    text-align: left;
-    box-sizing: border-box;
-
+.mainLayout {
     display: flex;
-    justify-content: space-between;
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    gap: 25px;
     align-items: flex-start;
 }
 
-.deleteBtn {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #3a3a3a;
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea {
+    background-color: #1b1b1b;
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 8px;
+
+    border-radius: 6px;
+
+    font-family: Arial;
+    font-size: 13.333px;
+
+    resize: none;
+
+    box-sizing: border-box;
+
+    width: 30%;
+    height: 34px;
+
+    vertical-align: middle;
 }
+
+
+/* =========================
+   FOLDERS
+========================= */
+
+.folderButton {
+    width: 100%;
+
+    padding: 8px 10px;
+
+    background: #181818;
+    color: white;
+
+    font-size: 14px;
+    text-align: left;
+
+    border-radius: 8px;
+
+    font-weight: bolder;
+
+    border: 1px solid #3a3a3a;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.folderButton:hover {
+    background: #ffcc00;
+    color: white;
+
+    border-color: #ffcc00;
+}
+
+
+.folderInputContainer {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.folderInputContainer input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   FOLDER CONTEXT MENU
+========================= */
+
+#folderContextMenu {
+    display: none;
+
+    position: fixed;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+
+    padding: 5px;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+#folderContextMenu button {
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    box-shadow: none;
+
+    padding: 8px 12px;
+
+    font-size: 14px;
+
+    width: 100%;
+
+    text-align: left;
+}
+
+#folderContextMenu button:hover {
+    background: #ff005d;
+
+    color: white;
+
+    border-color: transparent;
+
+    transform: none;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+select {
+    background-color: #1b1b1b;
+
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 8px;
+
+    border-radius: 6px;
+
+    font-family: Arial;
+
+    font-size: 13.333px;
+
+    cursor: pointer;
+}
+
+select:hover {
+    border-color: #00bfff;
+}
+
+select:focus {
+    outline: none;
+
+    border-color: #00bfff;
+}
+
+
+/* =========================
+   NOTE FOLDER
+========================= */
+
+.textContainer h3 {
+    margin: 0;
+
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    width: fit-content;
+
+    color: #f0eded;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   SAVE FOLDER
+========================= */
+
+.saveFolderButton {
+    padding: 5px 8px;
+
+    font-size: 14px;
+
+    background: #181818;
+
+    color: white;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+#sideBarContainer {
+    position: absolute;
+
+    left: 15px;
+    top: 208px;
+
+    width: 250px;
+    min-height: 400px;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    text-align: left;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#sideBarContainer h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+#folderList {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+/* =========================
+   NOTES CONTAINER
+========================= */
+
+#notesContainer {
+    flex: 1;
+
+    width: auto;
+    max-width: none;
+
+    margin: 0;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+#searchInput {
+    background: #181818;
+
+    color: #f0eded;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    width: 400px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    font-family: Arial;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+#searchInput::placeholder {
+    color: #777;
+}
+
+#searchInput:focus {
+    border-color: #00bfff;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topBar {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 20px auto;
+
+    display: block;
+}
+
+
+/* =========================
+   FAVICON
+========================= */
+
+.favicon {
+    width: 16px;
+    height: 16px;
+
+    border-radius: 4px;
+
+    vertical-align: middle;
+
+    margin-right: 5px;
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.note {
+    background: #181818;    
+    overflow: hidden;
+
+    position: relative;
+    padding: 30px;
+
+    margin: 10px auto;
+
+    border-radius: 10px;
+
+    max-width: 725px;
+
+    text-align: left;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    border: 1px solid #3a3a3a;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.noteRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.noteFolder {
+    position: absolute;
+    right: 12px;
+    bottom: 50px;
+
+    width: fit-content;
+}
+
+.note a {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+
+    width: fit-content;
+}
+
+.noteInput {
+    background-color: #1b1b1b;
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 8px;
+
+    border-radius: 6px;
+
+    font-family: Arial;
+    font-size: 13.333px;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    min-height: 80px;
+
+    outline: none;
+
+    white-space: pre-wrap;
+
+    text-align: left;
+}
+
+/* =========================
+   PAGE TABS
+========================= */
+
+.pageTabs {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    display: flex;
+    gap: 4px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+    border-radius: 9px;
+
+    padding: 3px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.pageTab {
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    color: #aaa;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+
+
+/* Current page */
+
+.pageTab.active {
+    background: #3a3a3a;
+    color: #f0eded;
+}
+
+/* Hover */
+
+.pageTab:hover {
+    background: #3a3a3a;
+    color: white;
+}
+.noteInput:focus {
+    border-color: #00bfff;
+}
+
+/* =========================
+   VIEW SECTION
+========================= */
+
+#viewSection {
+    margin-top: 25px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #3a3a3a;
+}
+
+#viewSection h2 {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+}
+
+.viewOption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 8px 10px;
+
+    background: #181818;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bolder;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    margin-bottom: 6px;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+.viewOption:hover {
+    background: #00bfff;
+    border-color: #00bfff;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+.viewOption input {
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
+    cursor: pointer;
+}   
+
+
+/* =========================
+   NOTE BUTTONS
+========================= */
+
+.moveBtn,
+.deleteBtn,
+.saveBtn,
+.editBtn,
+.editSaveButton {
+    padding: 5px 10px;
+
+    font-size: 14px;
+
+    background: #181818;
+
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* MOVE */
+
+.moveBtn:hover {
+    background: #00bfff;
+
+    color: white;
+
+    border-color: #00bfff;
+}
+
+
+/* DELETE */
 
 .deleteBtn:hover {
-    background-color: #ff005d;
+    background: #ff005d;
+
     color: white;
+
+    border-color: #ff005d;
 }
+
+
+/* SAVE */
 
 .saveBtn {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #3a3a3a;
+    margin-left: 5px;
 }
 
-.saveBtn:hover {
-    background-color: #59d28d;
+.saveBtn:hover,
+.editSaveButton:hover {
+    background: #59d28d;
+
     color: white;
+
+    border-color: #59d28d;
 }
 
 
-.editBtn {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #3a3a3a;
-}
+/* EDIT */
 
 .editBtn:hover {
-    background-color: #00bfff;
+    background: #00bfff;
+
     color: white;
+
+    border-color: #00bfff;
 }
+
+
+/* =========================
+   TEXT
+========================= */
 
 .textContainer {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    
+    margin-right: 25px;
 }
 
 .noteText {
     margin-bottom: 25px;
+
+    white-space: pre-wrap;
 }
 
 .buttonContainer {
     display: flex;
+
     gap: 8px;
 }
 
+
+/* =========================
+   LINKS
+========================= */
+
 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+    font-style: italic;
     text-decoration: none;
-    color:#00bfff;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    width: fit-content;
+
+    color: #00bfff;
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
 }
+
+a:hover {
+    background: #181818;
+    border-color: #ffcc00;
+
+    color: #ffcc00;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+/* =========================
+   DATE TIME
+========================= */
 
 .dateTimeContainer {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 8px;
+
     margin-top: 10px;
 }
 
 .dateTimeContainer label {
-    background: #3a3a3a;
-    padding: 3px 6px;
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 6px 10px;
+
     border-radius: 8px;
+
     width: fit-content;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    box-sizing: border-box;
+}
+
+.editSaveButton {
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.editInput {
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* =========================
+   NOTE TITLE
+========================= */
+
+.titleFavicon {
+    width: 16px;
+    height: 16px;
+
+    border-radius: 4px;
+
+    margin-right: 6px;
+
+    vertical-align: middle;
 }
 
 .textContainer h3 {
     margin: 0;
-    background: #3a3a3a;
-    padding: 3px 6px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+
+    padding: 6px 10px;
+
     border-radius: 8px;
+
     width: fit-content;
+
+    color: #f0eded;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+
+/* =========================
+   INPUTS
+========================= */
 
 input {
     background-color: #1b1b1b;
+
     color: white;
+
     border: 1px solid #3a3a3a;
+
     padding: 8px;
+
     border-radius: 6px;
+
+    font-family: Arial;
 }
 
+input:focus {
+    outline: none;
+
+    border-color: #00bfff;
+}
+
+
+/* =========================
+   NOTE DATE TIME
+========================= */
+
 .noteDateTime {
-    color: #aaa;
-    font-size: 14px;
     display: flex;
-    flex-direction: column;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 0;
+
+    background: transparent;
+
+    padding: 0;
+}
+
+.noteDateTime > div {
+    background: #181818;
+
+
+    border: 1px solid #3a3a3a;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    width: fit-content;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    box-sizing: border-box;
+
+    white-space: nowrap;
+}
+
+.dateTimeBox {
+  background: #1b1b1b;
+  color: #f0eded;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+  display: inline-block;
+}
+/* =========================
+   CALENDAR
+========================= */
+
+#calendarContainer {
+    position: absolute;
+
+    right: 20px;
+    top: 208px;
+
+    width: 250px;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.calendarHeader {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.calendarHeader h2 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+.calendarHeader button {
+    background: #181818;
+
+    color: white;
+
+    font-size: 20px;
+
+    padding: 3px 8px;
+
+    border: 1px solid #3a3a3a;
+}
+
+.calendarWeekdays,
+#calendarDays {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
     gap: 4px;
 }
 
-.editSaveButton {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #3a3a3a;
-    color: white;
+.calendarWeekdays {
+    margin-bottom: 6px;
+
+    color: #aaa;
+
+    font-size: 12px;
 }
 
-.editSaveButton:hover {
-    background-color: #59d28d;
+#calendarDays button {
+    background: transparent;
+
     color: white;
+
+    padding: 7px 0;
+
+    font-size: 13px;
+
+    border-radius: 6px;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+#calendarDays button:hover {
+    background: #00bfff;
+
+    transform: none;
+}
+
+#calendarDays .today {
+    background: #3a3a3a;
+
+    font-weight: bold;
+}
+
+.calendarDay {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    min-height: 38px;
+}
+
+.calendarDot {
+    width: 5px;
+
+    height: 5px;
+
+    background: #00bfff;
+
+    border-radius: 50%;
+}
+
+#calendarNotes {
+    margin-top: 12px;
+
+    border-top: 1px solid #3a3a3a;
+
+    padding-top: 10px;
+
+    text-align: left;
+}
+
+#calendarNotes div {
+    background: #1e1e1e;
+
+    padding: 6px 8px;
+
+    margin-top: 5px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: bolder;
+}
+
+.calendarFavicon {
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 4px;
+
+    vertical-align: middle;
+
+    margin-right: 6px;
 }

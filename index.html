@@ -1,31 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Web Notes</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+ <h1>Web Notes</h1>
+ 
 
-<h1> Web Notes </h1>
+ <body>
+ <div class="pageTabs">
+    <a href="index.html" class="pageTab active">Web Notes</a>
+    <a href="IdeasPage/ideas.html" class="pageTab">Sticky Ideas</a>
+</div>
+    <div class="topBar">
+      <input id="searchInput" type="text" placeholder="🔍 Search notes..." />
 
-<body>
+      <button id="addBtn">Add Note</button>
+      <button id="addFolderBtn">Add Folder</button>
+     
+    </div>
 
-<div class= "topBar">
+    <div class="mainLayout">
+      <div id="sideBarContainer">
+        <h2>Folders</h2>
 
-<input id= "searchInput" type="text" placeholder="🔍 Search notes...">
+        <div id="folderList"></div>
 
-<button id="addBtn">   Add Note   </button>
+        <div id="viewSection">
+    <h2>View</h2>
+
+    <label class="viewOption">
+        <input type="checkbox" id="viewTime" checked>
+         Time
+    </label>
+
+    <label class="viewOption">
+        <input type="checkbox" id="viewLink" checked>
+         Link
+    </label>
+
+
+    <label class="viewOption">
+        <input type="checkbox" id="viewCalendar" checked>
+        Calendar
+    </label>
+
+  
+    <label class="viewOption">
+    <input type="checkbox" id="showFolder">
+     Folder
+</label>
+
+      <label class="viewOption">
+        <input type="checkbox" id="viewMove" checked>
+         Placement
+    </label>
+    
 </div>
 
+      </div>
 
+      
 
-<div id = "notesContainer"></div>
+      <div id="notesContainer"></div>
+    </div>
 
-<script src="script.js"></script>
+    <div id="folderContextMenu">
+      <button id="deleteFolderOption">🗑️</button>
+      <button id="renameFolderOption">✏️</button>
+    </div>
 
-</body>
+    <div id="calendarContainer">
+      <div class="calendarHeader">
+        <button id="previousMonth">‹</button>
 
+        <h2 id="calendarMonth"></h2>
+
+        <button id="nextMonth">›</button>
+      </div>
+
+      <div class="calendarWeekdays">
+        <span>Su</span>
+        <span>Mo</span>
+        <span>Tu</span>
+        <span>We</span>
+        <span>Th</span>
+        <span>Fr</span>
+        <span>Sa</span>
+      </div>
+
+      <div id="calendarDays"></div>
+      <div id="calendarNotes"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

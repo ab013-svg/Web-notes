@@ -1,0 +1,650 @@
+body {
+    background: #1b1b1b;
+    color: rgb(240, 237, 237);
+    font-family: Arial;
+    text-align: center;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+    font-style: italic;
+    text-decoration: none;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    width: fit-content;
+
+    color: #00bfff;
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+a:hover {
+    background: #181818;
+    border-color: #ffcc00;
+
+    color: #ffcc00;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+h1 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 25px 0 15px;
+    color: #f0eded;
+
+    display: inline-block;
+    padding: 8px 18px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+h1::after {
+    content: "";
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    background: #3a3a3a;
+
+    margin: 8px auto 0;
+
+    border-radius: 2px;
+}
+
+/* =========================
+   GENERAL BUTTON STYLE
+========================= */
+
+button {
+    padding: 5px 10px;
+
+    font-size: 18px;
+    font-family: Arial;
+
+    cursor: pointer;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+
+    background: #181818;
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+button:hover {
+    background: #00bfff;
+    color: white;
+
+    border-color: #00bfff;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   PAGE TABS
+========================= */
+
+.pageTabs {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    display: flex;
+
+    gap: 4px;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 9px;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+.pageTab {
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-style: italic;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.pageTab.active {
+    background: #3a3a3a;
+
+    color: #f0eded;
+}
+
+
+.pageTab:hover {
+    background: #3a3a3a;
+
+    color: white;
+}
+
+
+/* =========================
+   BOARD TOOLBAR
+========================= */
+
+.boardToolbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    margin: 20px auto 10px;
+}
+
+
+/* =========================
+   BOARD NAME
+========================= */
+
+#boardName {
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    padding: 6px 14px;
+
+    min-width: 120px;
+
+    color: #f0eded;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BOARD BUTTONS
+========================= */
+
+#previousBoardBtn,
+#nextBoardBtn {
+    padding: 5px 10px;
+
+    font-size: 18px;
+}
+
+
+#addBoardBtn,
+#renameBoardBtn,
+#deleteBoardBtn {
+    padding: 5px 10px;
+
+    font-size: 14px;
+
+    font-family: Arial;
+
+    background: #181818;
+
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+#addBoardBtn:hover,
+#renameBoardBtn:hover {
+    background: #00bfff;
+
+    color: white;
+
+    border-color: #00bfff;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+#deleteBoardBtn:hover {
+    background: #ff005d;
+
+    color: white;
+
+    border-color: #ff005d;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   IDEA TOOLBAR
+========================= */
+
+.ideaToolbar {
+    margin: 10px auto;
+}
+
+
+#addStickyBtn {
+    padding: 5px 10px;
+
+    font-size: 18px;
+
+    font-family: Arial;
+
+    background: #181818;
+
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+#addStickyBtn:hover {
+    background: #00bfff;
+
+    color: white;
+
+    border-color: #00bfff;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   IDEA BOARD
+========================= */
+
+#ideaBoard {
+    position: relative;
+
+    width: 95%;
+    max-width: 1600px;
+
+    height: calc(100vh - 150px);
+
+    margin: 30px auto;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 10px;
+
+    background: #181818;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+.stickyHeader {
+    position: relative;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 35px 0 10px;
+
+    box-sizing: border-box;
+
+    border-bottom:
+        1px solid rgba(0, 0, 0, 0.15);
+
+    cursor: grab;
+}
+
+
+/* =========================
+   STICKY CONTENT
+========================= */
+
+.stickyContent {
+    height: calc(100% - 35px);
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+    overflow: auto;
+
+    cursor: text;
+
+    white-space: pre-wrap;
+
+    font-weight: normal;
+}
+
+
+/* =========================
+   STICKY DELETE
+========================= */
+
+.stickyDelete {
+    position: absolute;
+
+    right: 5px;
+
+    top: 5px;
+
+    padding: 2px 5px;
+
+    font-size: 13px;
+
+    background: transparent;
+
+    color: #1b1b1b;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+.stickyDelete:hover {
+    background: #ff005d;
+
+    color: white;
+
+    border: none;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================
+   STICKY NOTE
+========================= */
+
+.stickyNote {
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    min-width: 90px;
+
+    min-height: 90px;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background: #ffcc00;
+
+    color: #1b1b1b;
+
+    border:
+        1px solid rgba(58, 58, 58, 0.7);
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    cursor: grab;
+
+    overflow: hidden;
+
+    resize: both;
+}
+
+
+/* =========================
+   STICKY TITLE
+========================= */
+
+.stickyTitle {
+    width: 100%;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    outline: none;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    cursor: text;
+}
+
+
+/* =========================
+   ROTATE HANDLE
+========================= */
+
+.rotateHandle {
+    position: absolute;
+
+    bottom: 6px;
+
+    right: 6px;
+
+    width: 22px;
+
+    height: 22px;
+
+    background: #3a3a3a;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    cursor: grab;
+
+    user-select: none;
+}
+
+
+.rotateHandle:hover {
+    background: #00bfff;
+}
+
+/* =========================
+   BOARD INPUT
+========================= */
+
+#boardInputContainer {
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 8px auto 12px;
+}
+
+
+#boardInput {
+    width: 220px;
+
+    padding: 7px 10px;
+
+    background: #1b1b1b;
+
+    color: #f0eded;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    font-family: Arial;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+
+#boardInput:focus {
+    border-color: #00bfff;
+}
+
+
+#boardInput::placeholder {
+    color: #777;
+}
+
+
+#saveBoardInput,
+#cancelBoardInput {
+    padding: 5px 10px;
+
+    font-size: 14px;
+}
+
+
+#saveBoardInput:hover {
+    background: #59d28d;
+
+    border-color: #59d28d;
+}
+
+
+#cancelBoardInput:hover {
+    background: #ff005d;
+
+    border-color: #ff005d;
+}

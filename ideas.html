@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ideas</title>
+    <link rel="stylesheet" href="ideas.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         PAGE TABS
+    ========================= -->
+
+    <div class="pageTabs">
+      <a href="../index.html" class="pageTab">Web Notes</a>
+      <a href="ideas.html" class="pageTab active">Sticky Ideas</a>
+    </div>
+
+    <!-- =========================
+         MAIN TITLE
+    ========================= -->
+
+    <h1>Sticky Ideas</h1>
+
+    <!-- =========================
+         BOARD CONTROLS
+    ========================= -->
+
+    <div class="boardToolbar">
+      <button id="previousBoardBtn">←</button>
+
+      <div id="boardName">Board 1</div>
+
+      <button id="nextBoardBtn">→</button>
+
+      <button id="addBoardBtn">Add Board</button>
+
+      <button id="renameBoardBtn">✏️</button>
+
+      <button id="deleteBoardBtn">🗑️</button>
+    </div>
+
+    <div id="boardInputContainer">
+      <input
+        type="text"
+        id="boardInput"
+        placeholder="Board name..."
+        maxlength="30"
+      />
+
+      <button id="saveBoardInput">Save</button>
+
+      <button id="cancelBoardInput">Cancel</button>
+    </div>
+    <!-- =========================
+         IDEA TOOLBAR
+    ========================= -->
+
+    <div class="ideaToolbar">
+      <button id="addStickyBtn">Add Note</button>
+    </div>
+
+    <!-- =========================
+         IDEA BOARD
+    ========================= -->
+
+    <div id="ideaBoard"></div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script src="ideas.js"></script>
+  </body>
+</html>
