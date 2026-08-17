@@ -14,7 +14,6 @@ let calendarDate = new Date();
 
 function addTextFormatting(element) {
   element.addEventListener("keydown", function (event) {
-
     if (event.ctrlKey && event.key.toLowerCase() === "b") {
       event.preventDefault();
       document.execCommand("bold", false, null);
@@ -24,7 +23,6 @@ function addTextFormatting(element) {
       event.preventDefault();
       document.execCommand("italic", false, null);
     }
-
   });
 }
 
@@ -47,13 +45,11 @@ viewMove.checked = savedView.move ?? true;
 viewCalendar.checked = savedView.calendar ?? true;
 viewFolder.checked = savedView.folder ?? true;
 
-
 // =========================
 // UPDATE VIEW
 // =========================
 
 function updateView() {
-
   // TIME
   document.querySelectorAll(".noteDateTime").forEach(function (element) {
     element.style.display = viewTime.checked ? "flex" : "none";
@@ -89,11 +85,10 @@ function updateView() {
       link: viewLink.checked,
       move: viewMove.checked,
       calendar: viewCalendar.checked,
-      folder: viewFolder.checked
-    })
+      folder: viewFolder.checked,
+    }),
   );
 }
-
 
 // =========================
 // VIEW EVENTS
@@ -106,7 +101,6 @@ viewCalendar.addEventListener("change", updateView);
 viewFolder.addEventListener("change", updateView);
 
 updateView();
-
 
 function displayCalendar() {
   const calendarDays = document.getElementById("calendarDays");
@@ -124,8 +118,6 @@ function displayCalendar() {
     month: "long",
     year: "numeric",
   });
-
-  
 
   // Empty spaces before the first day
   for (let i = 0; i < firstDay; i++) {
@@ -366,7 +358,6 @@ function displayNotes() {
     }
     updateView();
   });
-  
 }
 
 function displayNote(noteData) {
@@ -376,9 +367,9 @@ function displayNote(noteData) {
   const textContainer = document.createElement("div");
   textContainer.classList.add("textContainer");
 
- const titleText = document.createElement("h3");
+  const titleText = document.createElement("h3");
 
-if (noteData.url && isValidUrl(noteData.url)) {
+  if (noteData.url && isValidUrl(noteData.url)) {
     const favicon = document.createElement("img");
 
     const domain = new URL(noteData.url).hostname;
@@ -388,50 +379,49 @@ if (noteData.url && isValidUrl(noteData.url)) {
     favicon.classList.add("titleFavicon");
 
     favicon.onerror = function () {
-        favicon.remove();
+      favicon.remove();
     };
 
     titleText.appendChild(favicon);
-}
+  }
 
-titleText.appendChild(document.createTextNode(noteData.title));
+  titleText.appendChild(document.createTextNode(noteData.title));
 
-const noteText = document.createElement("div");
-noteText.classList.add("noteText");
+  const noteText = document.createElement("div");
+  noteText.classList.add("noteText");
 
-noteText.innerHTML = noteData.text || "";
+  noteText.innerHTML = noteData.text || "";
 
   textContainer.appendChild(titleText);
 
   // ----------
-  // DATE/ TIME 
+  // DATE/ TIME
   // ---------
 
   const dateTimeText = document.createElement("div");
-dateTimeText.classList.add("noteDateTime");
+  dateTimeText.classList.add("noteDateTime");
 
-if (noteData.startDateTime) {
-  const startBox = document.createElement("div");
-  startBox.classList.add("dateTimeBox");
-  startBox.textContent =
-    "🕛 Start: " + formatDateTime(noteData.startDateTime);
+  if (noteData.startDateTime) {
+    const startBox = document.createElement("div");
+    startBox.classList.add("dateTimeBox");
+    startBox.textContent =
+      "🕛 Start: " + formatDateTime(noteData.startDateTime);
 
-  dateTimeText.appendChild(startBox);
-}
+    dateTimeText.appendChild(startBox);
+  }
 
-if (noteData.endDateTime) {
-  const endBox = document.createElement("div");
-  endBox.classList.add("dateTimeBox");
-  endBox.textContent =
-    "🕛 End: " + formatDateTime(noteData.endDateTime);
+  if (noteData.endDateTime) {
+    const endBox = document.createElement("div");
+    endBox.classList.add("dateTimeBox");
+    endBox.textContent = "🕛 End: " + formatDateTime(noteData.endDateTime);
 
-  dateTimeText.appendChild(endBox);
-}
+    dateTimeText.appendChild(endBox);
+  }
 
-if (noteData.startDateTime || noteData.endDateTime) {
-  textContainer.appendChild(dateTimeText);
-}
-  
+  if (noteData.startDateTime || noteData.endDateTime) {
+    textContainer.appendChild(dateTimeText);
+  }
+
   textContainer.appendChild(noteText);
 
   const folderText = document.createElement("div");
@@ -449,8 +439,7 @@ if (noteData.startDateTime || noteData.endDateTime) {
     folderText.textContent = "📁 None Slected";
   }
 
- // textContainer.appendChild(folderText);
-
+  // textContainer.appendChild(folderText);
 
   let urlText = null;
 
@@ -469,10 +458,10 @@ if (noteData.startDateTime || noteData.endDateTime) {
 
     urlText.textContent = website;
     urlText.prepend(favicon);
-   // textContainer.appendChild(urlText);
+    // textContainer.appendChild(urlText);
   }
 
- // note.appendChild(textContainer);
+  // note.appendChild(textContainer);
 
   const upButton = document.createElement("button");
   upButton.textContent = "⬆️";
@@ -525,8 +514,7 @@ if (noteData.startDateTime || noteData.endDateTime) {
   editButton.classList.add("editBtn");
 
   const noteRight = document.createElement("div");
-noteRight.classList.add("noteRight");
-
+  noteRight.classList.add("noteRight");
 
   const buttonContainer = document.createElement("div");
   buttonContainer.classList.add("buttonContainer");
@@ -546,19 +534,19 @@ noteRight.classList.add("noteRight");
 
     const editTitleInput = document.createElement("input");
     editTitleInput.value = titleText.textContent;
-   titleText.replaceWith(editTitleInput);
+    titleText.replaceWith(editTitleInput);
 
     const editInput = document.createElement("div");
 
-editInput.classList.add("noteInput");
-editInput.contentEditable = "true";
+    editInput.classList.add("noteInput");
+    editInput.contentEditable = "true";
 
-editInput.innerHTML = noteData.text || "";
+    editInput.innerHTML = noteData.text || "";
 
-addTextFormatting(editInput);
-editInput.classList.add("editInput");
+    addTextFormatting(editInput);
+    editInput.classList.add("editInput");
 
-noteText.replaceWith(editInput);
+    noteText.replaceWith(editInput);
 
     const editUrlInput = document.createElement("input");
     const editFolderSelect = document.createElement("select");
@@ -712,34 +700,40 @@ noteText.replaceWith(editInput);
     });
   });
 
-buttonContainer.appendChild(editButton);
-buttonContainer.appendChild(deleteButton);
-buttonContainer.appendChild(upButton);
-buttonContainer.appendChild(downButton);
+  buttonContainer.appendChild(editButton);
+  buttonContainer.appendChild(deleteButton);
+  buttonContainer.appendChild(upButton);
+  buttonContainer.appendChild(downButton);
 
-noteRight.appendChild(buttonContainer);
+  noteRight.appendChild(buttonContainer);
 
   //note.appendChild(buttonContainer);
 
- // notesContainer.appendChild(note);
+  // notesContainer.appendChild(note);
 
-
-if (urlText) {
+  if (urlText) {
     noteRight.appendChild(urlText);
-}
+  }
 
-if (folderText) {
+  if (folderText) {
     noteRight.appendChild(folderText);
-}
+  }
 
-note.appendChild(textContainer);
-note.appendChild(noteRight);
+  note.appendChild(textContainer);
+  note.appendChild(noteRight);
 
-notesContainer.appendChild(note);
-  
+  notesContainer.appendChild(note);
 }
 
 addButton.addEventListener("click", function () {
+  const existingInput = document.querySelector(".inputContainer");
+
+  // If inputs already exist, remove them
+  if (existingInput) {
+    existingInput.remove();
+    return;
+  }
+
   if (document.querySelector(".inputContainer")) {
     return;
   }
@@ -750,14 +744,14 @@ addButton.addEventListener("click", function () {
   const titleInput = document.createElement("input");
   titleInput.placeholder = "Enter a title...";
 
-const input = document.createElement("div");
+  const input = document.createElement("div");
 
-input.classList.add("noteInput");
-input.contentEditable = "true";
+  input.classList.add("noteInput");
+  input.contentEditable = "true";
 
-input.dataset.placeholder = "Write your note here...";
+  input.dataset.placeholder = "Write your note here...";
 
-addTextFormatting(input);
+  addTextFormatting(input);
 
   const urlInput = document.createElement("input");
   urlInput.placeholder = "Insert URL here.. (optional)";
@@ -801,24 +795,33 @@ addTextFormatting(input);
       return;
     }
 
+    const title = titleInput.value.trim();
+    const text = input.innerText.trim();
+    const url = urlInput.value.trim();
+
+    if (!title && !text && !url) {
+      inputContainer.remove();
+      return;
+    }
+
     const noteData = {
-      title: titleInput.value,
-      text: input.innerHTML,
-      url: urlInput.value,
-      startDateTime: startDateTimeInput.value,
-      endDateTime: endDateTimeInput.value,
-      folderId: currentFolder === "all" ? null : currentFolder,
+    title: title,
+    text: input.innerHTML,
+    url: url,
+    startDateTime: startDateTimeInput.value,
+    endDateTime: endDateTimeInput.value,
+    folderId: currentFolder === "all" ? null : currentFolder,
     };
 
     notes.push(noteData);
 
     localStorage.setItem("notes", JSON.stringify(notes));
 
-    displayNote(noteData);
+    // Remove all input fields after saving
+    inputContainer.remove();
 
-    titleInput.value = "";
-    input.value = "";
-    urlInput.value = "";
+    displayNotes();
+    displayCalendar();
   });
 });
 
@@ -879,4 +882,3 @@ searchInput.addEventListener("input", function () {
 
 displayFolders();
 displayCalendar();
-

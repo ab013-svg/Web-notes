@@ -58,11 +58,11 @@ h1 {
     font-weight: 800;
     letter-spacing: -1px;
     margin: 25px 0 15px;
-    color: #f0eded;
+    color: #ffcc00;
 
     display: inline-block;
     padding: 8px 18px;
-
+    font-style:italic;
     background: #181818;
     border: 1px solid #3a3a3a;
     border-radius: 12px;
@@ -77,7 +77,7 @@ h1::after {
     width: 45px;
     height: 2px;
 
-    background: #3a3a3a;
+    background: #dfdede;
 
     margin: 8px auto 0;
 

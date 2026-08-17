@@ -49,7 +49,7 @@ h1 {
 
     display: inline-block;
     padding: 8px 18px;
-
+    font-style:italic;
     background: #181818;
     border: 1px solid #3a3a3a;
     border-radius: 12px;
@@ -63,8 +63,9 @@ h1::after {
 
     width: 45px;
     height: 2px;
+    
 
-    background: #3a3a3a;
+    background: #dfdede;
 
     margin: 8px auto 0;
 
@@ -303,6 +304,100 @@ select:focus {
 
 
 /* =========================
+   NOTE INPUTS
+========================= */
+
+.noteInput,
+input,
+textarea,
+select {
+    background: #181818;
+
+    color: #f0eded;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    font-family: Arial;
+    font-size: 14px;
+
+    outline: none;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+.noteInput:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00bfff;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   PLACEHOLDERS
+========================= */
+
+.noteInput::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: #777;
+}
+
+
+/* =========================
+   NOTE TEXT AREA
+========================= */
+
+.noteInput {
+    width: 100%;
+
+    min-height: 80px;
+
+    resize: vertical;
+
+    white-space: pre-wrap;
+
+    text-align: left;
+}
+
+
+/* =========================
+   NOTE TITLE / URL / OTHER
+========================= */
+
+input {
+    height: 34px;
+}
+
+
+/* =========================
+   FOLDER SELECT
+========================= */
+
+select {
+    height: 34px;
+
+    cursor: pointer;
+}
+
+/* =========================
    NOTE FOLDER
 ========================= */
 
@@ -536,7 +631,7 @@ select:focus {
 
     box-sizing: border-box;
 
-    width: 100%;
+    width: calc(100% - 580px);
     min-height: 80px;
 
     outline: none;
@@ -544,6 +639,8 @@ select:focus {
     white-space: pre-wrap;
 
     text-align: left;
+
+    margin-left: 290px;
 }
 
 /* =========================
@@ -1129,3 +1226,4 @@ input:focus {
 
     margin-right: 6px;
 }
+
