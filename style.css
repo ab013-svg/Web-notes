@@ -756,32 +756,32 @@ FOLDERS
         width: fit-content;
     }
 
-    .noteInput {
-        background-color: #1b1b1b;
-        color: white;
+.noteInput {
+    background-color: #1b1b1b;
+    color: white;
 
-        border: 1px solid #3a3a3a;
+    border: 1px solid #3a3a3a;
 
-        padding: 8px;
+    padding: 8px;
 
-        border-radius: 6px;
+    border-radius: 6px;
 
-        font-family: Arial;
-        font-size: 13.333px;
+    font-family: Arial;
+    font-size: 13.333px;
 
-        box-sizing: border-box;
+    box-sizing: border-box;
 
-        width: calc(100% - 580px);
-        min-height: 80px;
+    width: 100%;
+    min-height: 80px;
 
-        outline: none;
+    outline: none;
 
-        white-space: pre-wrap;
+    white-space: pre-wrap;
 
-        text-align: left;
+    text-align: left;
 
-        margin-left: 290px;
-    }
+    margin-left: 0;
+}
 
     /* =========================
     PAGE TABS
