@@ -268,8 +268,20 @@ function displayFolders() {
   allNotesButton.classList.add("folderButton");
   allNotesButton.textContent = "📝 All Notes";
 
+  // Make All Notes selected if we're currently there
+  if (currentFolder === "all") {
+    allNotesButton.classList.add("selected");
+  }
+
   allNotesButton.addEventListener("click", function () {
     currentFolder = "all";
+
+    document.querySelectorAll(".folderButton").forEach(function (button) {
+      button.classList.remove("selected");
+    });
+
+    allNotesButton.classList.add("selected");
+
     displayNotes();
   });
 
@@ -277,11 +289,24 @@ function displayFolders() {
 
   folders.forEach(function (folder) {
     const folderButton = document.createElement("button");
+
     folderButton.classList.add("folderButton");
     folderButton.textContent = "📁 " + folder.name;
 
+    // Make current folder selected
+    if (currentFolder === folder.id) {
+      folderButton.classList.add("selected");
+    }
+
     folderButton.addEventListener("click", function () {
       currentFolder = folder.id;
+
+      document.querySelectorAll(".folderButton").forEach(function (button) {
+        button.classList.remove("selected");
+      });
+
+      folderButton.classList.add("selected");
+
       displayNotes();
     });
 
@@ -296,6 +321,7 @@ function displayFolders() {
 
       contextMenu.dataset.folderId = folder.id;
     });
+
     folderList.appendChild(folderButton);
   });
 }

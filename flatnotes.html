@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flat Notes</title>
+
+    <link rel="stylesheet" href="flatnotes.css">
+</head>
+
+<div class="pageHeader">
+    <img src="fn_logo.png" class="pageLogo">
+    <h1>Flat Notes</h1>
+</div>
+
+<body>
+
+
+    <div class="pageTabs">
+        <a href="index.html" class="pageTab">Web Notes</a>
+        <a href="ideas.html" class="pageTab">Sticky Ideas</a>
+        <a href="flatnotes.html" class="pageTab active">Flat Notes</a>
+    </div>
+
+
+    <div class="flatNotesLayout">
+
+        <!-- SIDEBAR -->
+
+        <div class="flatNotesSidebar">
+
+            <div class="flatNotesSidebarHeader">
+                <h2>Notes</h2>
+
+                <button id="addBoardBtn">+</button>
+            </div>
+
+            <div id="boardList"></div>
+
+        </div>
+
+
+        <!-- EDITOR -->
+
+        <div class="flatNotesMain">
+
+            <div class="flatNotesTopBar">
+
+                <input
+                    id="boardTitle"
+                    type="text"
+                    placeholder="Untitled"
+                >
+
+                <span id="saveStatus">Saved</span>
+
+            </div>
+
+
+            <div
+                id="flatNotesEditor"
+                contenteditable="true"
+                spellcheck="true"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="boardContextMenu">
+
+        <button id="renameBoardOption">
+            ✏️
+        </button>
+
+        <button id="deleteBoardOption">
+            🗑️
+        </button>
+
+    </div>
+
+
+    <script src="flatnotes.js"></script>
+
+</body>
+</html>

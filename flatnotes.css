@@ -1,0 +1,556 @@
+/* =========================================================
+   FLAT NOTES
+========================================================= */
+
+body {
+   background-color: #1b1b1b;
+
+    background-image: radial-gradient(
+        #232323 1px,
+        transparent 1px
+    );
+
+    background-size: 15px 15px;
+    color: rgb(240, 237, 237);
+    font-family: Arial;
+    text-align: center;
+}
+
+
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    background: #181818;
+    border: 1px solid #3a3a3a;
+
+    font-style: italic;
+    text-decoration: none;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    width: fit-content;
+
+    color: #00bfff;
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+a:hover {
+    background: #181818;
+    border-color: #00bfff;
+    color: #00bfff;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+h1 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+
+    color: #00bfff;
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    font-style: italic;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    background: #dfdede;
+
+    margin: 8px auto 0;
+
+    border-radius: 2px;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin: 25px 0 15px;
+}
+
+.pageLogo {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+}
+
+/* =========================================================
+   PAGE TABS
+========================================================= */
+
+.pageTabs {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    display: flex;
+    gap: 4px;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 9px;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+.pageTab {
+    padding: 7px 12px;
+
+    border: 1px solid #3a3a3a;   /* THIS gives the inner border */
+
+    border-radius: 6px;
+
+    background: #181818;
+
+    color: #aaa;
+
+    text-decoration: none;
+    font-style: italic;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.pageTab.active {
+    background: #3a3a3a;
+
+    border-color: #3a3a3a;
+
+    color: #f0eded;
+}
+
+
+.pageTab:hover {
+    background: #292929;
+
+    border-color: #00bfff;
+
+    color: #00bfff;
+}
+
+
+/* =========================================================
+   FLAT NOTES LAYOUT
+========================================================= */
+
+.flatNotesLayout {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    min-height: 650px;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.flatNotesSidebar {
+    width: 230px;
+
+    flex-shrink: 0;
+
+    background: #151515;
+
+    border-right: 1px solid #333;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    text-align: left;
+}
+
+.flatNotesSidebarHeader {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.flatNotesSidebarHeader h2 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   ADD BOARD BUTTON
+========================================================= */
+
+#addBoardBtn {
+    width: 32px;
+
+    height: 32px;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 6px;
+
+    background: #181818;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+#addBoardBtn:hover {
+    background: #00bfff;
+
+    border-color: #00bfff;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BOARD LIST
+========================================================= */
+
+.flatBoardButton {
+    width: 100%;
+
+    display: block;
+
+    padding: 8px 10px;
+
+    margin-bottom: 5px;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    background: #181818;
+
+    color: #f0eded;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: Arial;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.20);
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+.flatBoardButton:hover {
+    background: #222;
+
+    border-color: #00bfff;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(-1px);
+}
+
+.flatBoardButton.selected {
+    background: #292929;
+
+    border-color: #00bfff;
+
+    color: #00bfff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.flatNotesMain {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.flatNotesTopBar {
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #333;
+
+    box-sizing: border-box;
+}
+
+#boardTitle {
+    flex: 1;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    font-family: Arial;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+#boardTitle::placeholder {
+    color: #666;
+}
+
+#saveStatus {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-left: 15px;
+}
+
+
+/* =========================================================
+   EDITOR
+========================================================= */
+
+#flatNotesEditor {
+    flex: 1;
+
+    min-height: 595px;
+
+    padding: 45px;
+
+    outline: none;
+
+    color: #eee;
+
+    font-family: Arial;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    text-align: left;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    /* RADIAL DOTS */
+    background-color: #181818;
+
+    background-image: radial-gradient(
+        #232323 1px,
+        transparent 1px
+    );
+
+    background-size: 15px 15px;
+}
+
+#flatNotesEditor:empty::before {
+    content: "Start typing...";
+
+    color: #666;
+}
+
+/* =========================================================
+   BOARD CONTEXT MENU
+========================================================= */
+
+#boardContextMenu {
+    position: fixed;
+
+    display: none;
+
+    flex-direction: column;
+
+    min-width: 120px;
+
+    background: #181818;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    padding: 4px;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   CONTEXT MENU BUTTONS
+========================================================= */
+
+#boardContextMenu button {
+    width: 100%;
+
+    padding: 7px 10px;
+
+    border: 1px solid transparent;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #f0eded;
+
+    font-family: Arial;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transform: none;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+#boardContextMenu button:hover {
+    background: #222;
+
+    border-color: #3a3a3a;
+
+    color: #00bfff;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   DELETE CONTEXT BUTTON
+========================================================= */
+
+#deleteBoardOption:hover {
+    background: #2a1818 !important;
+
+    border-color: #ff005d !important;
+
+    color: #ff005d !important;
+}
