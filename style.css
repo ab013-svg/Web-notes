@@ -173,6 +173,7 @@ NOTE FOLDER DISPLAY
     ========================= */
 .mainLayout {
     display: grid;
+
     grid-template-columns: 1fr 2fr 1fr;
 
     width: 90%;
@@ -184,6 +185,7 @@ NOTE FOLDER DISPLAY
 
     align-items: start;
 }
+
 
     /* =========================
     TEXTAREA
@@ -780,7 +782,6 @@ FOLDERS
 
     margin-left: 0;
 }
-
     /* =========================
     PAGE TABS
     ========================= */
@@ -1472,26 +1473,4 @@ CHECKBOX
     #calendarContainer {
         width: 100%;
     }
-}
-
-/* =========================
-   RESPONSIVE NOTE FORM
-========================= */
-
-#notesContainer {
-    width: 100%;
-    min-width: 0;
-}
-
-#notesContainer > * {
-    width: 100%;
-    max-width: none;
-    box-sizing: border-box;
-}
-
-#notesContainer .noteInput {
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    box-sizing: border-box;
 }
