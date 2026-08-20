@@ -6,7 +6,7 @@ body {
    background-color: #1b1b1b;
 
     background-image: radial-gradient(
-        #232323 1px,
+        #141414 1px,
         transparent 1px
     );
 
@@ -251,7 +251,7 @@ h1::after {
 .flatNotesSidebarHeader h2 {
     margin: 0;
 
-    font-size: 18px;
+    font-size: 25px;
 }
 
 
@@ -405,7 +405,7 @@ h1::after {
 
     font-family: Arial;
 
-    font-size: 20px;
+    font-size: 25px;
 
     font-weight: bold;
 }
@@ -418,7 +418,7 @@ h1::after {
     color: #888;
 
     font-size: 13px;
-
+    font-style: italic;
     margin-left: 15px;
 }
 
@@ -440,9 +440,8 @@ h1::after {
 
     font-family: Arial;
 
-    font-size: 16px;
+    font-size: 20px;
 
-    line-height: 1.7;
 
     text-align: left;
 
@@ -454,7 +453,7 @@ h1::after {
     background-color: #181818;
 
     background-image: radial-gradient(
-        #232323 1px,
+        #151515 1px,
         transparent 1px
     );
 
@@ -553,4 +552,19 @@ h1::after {
     border-color: #ff005d !important;
 
     color: #ff005d !important;
+}
+
+/* =========================
+   FLAT NOTE HEADERS
+========================= */
+
+#flatNotesEditor h2 {
+    font-size: 24px;
+
+
+    color: #f0eded;
+
+    margin: 15px 0 10px;
+
+    line-height: 1.5;
 }

@@ -5,12 +5,16 @@ const boardTitle = document.getElementById("boardTitle");
 const flatNotesEditor = document.getElementById("flatNotesEditor");
 const saveStatus = document.getElementById("saveStatus");
 
+
 const boardContextMenu = document.getElementById("boardContextMenu");
 const renameBoardOption = document.getElementById("renameBoardOption");
 const deleteBoardOption = document.getElementById("deleteBoardOption");
 
 
 let boards = JSON.parse(localStorage.getItem("flatBoards")) || [];
+
+const headingBtn = document.getElementById("headingBtn");
+const subHeadingBtn = document.getElementById("subHeadingBtn");
 
 let currentBoardId = null;
 let contextBoardId = null;
@@ -201,10 +205,14 @@ flatNotesEditor.addEventListener("input", () => {
 
 
 /* -------------------------
-   TAB INDENT
+   EDITOR SHORTCUTS
 ------------------------- */
 
 flatNotesEditor.addEventListener("keydown", event => {
+
+    /* -------------------------
+       TAB INDENT
+    ------------------------- */
 
     if (event.key === "Tab") {
 
@@ -218,8 +226,28 @@ flatNotesEditor.addEventListener("keydown", event => {
 
     }
 
-});
 
+    /* -------------------------
+       CTRL + H → HEADER
+    ------------------------- */
+
+    if (event.ctrlKey && event.key.toLowerCase() === "h") {
+
+        event.preventDefault();
+
+        document.execCommand(
+            "formatBlock",
+            false,
+            "h2"
+        );
+
+        saveStatus.textContent = "Saving...";
+
+        saveCurrentBoard();
+
+    }
+
+});
 
 /* -------------------------
    ADD BOARD
@@ -336,3 +364,4 @@ if (boards.length === 0) {
     openBoard(currentBoardId);
 
 }
+
