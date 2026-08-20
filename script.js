@@ -620,7 +620,7 @@ function displayNote(noteData) {
     }
 
     const editSaveButton = document.createElement("button");
-    editSaveButton.textContent = "📩";
+    editSaveButton.textContent = "Save";
     editSaveButton.classList.add("editSaveButton");
 
     buttonContainer.insertBefore(editSaveButton, editButton);
@@ -795,7 +795,7 @@ addButton.addEventListener("click", function () {
   endLabel.textContent = "End Time";
 
   const saveButton = document.createElement("button");
-  saveButton.textContent = "📩";
+  saveButton.textContent = "Save";
   saveButton.classList.add("saveBtn");
 
   const dateTimeContainer = document.createElement("div");
@@ -863,7 +863,7 @@ addFolderButton.addEventListener("click", function () {
   folderInput.placeholder = "Folder name...";
 
   const saveFolderButton = document.createElement("button");
-  saveFolderButton.textContent = "📩";
+  saveFolderButton.textContent = "Save";
   saveFolderButton.classList.add("saveFolderButton");
 
   folderInputContainer.appendChild(folderInput);
